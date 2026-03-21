@@ -1,7 +1,33 @@
-body{
+body,html{
+    height: 100%;
+    margin:0;
     background-color: beige;
 }
-p{
+
+.tablink{
+    background-color: #555;
+    color: white;
+    float:left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover{
+    background-color:#777;
+}
+
+.tabcontent{
+    color:white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#heading{
     color:rgb(3, 0, 2);
     font-size: 50px;
     height: 60px;
@@ -12,19 +38,19 @@ p{
     text-align: center;
     margin: 0 auto;
 }
-#container{
-    position: relative; /* Allows markers to sit on top of the image */
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
+h1{
+    text-align: center;
+    font-size: 100px;
+    color: black
+}
+
+#map{
     height: 70vh; /* Full viewport height */
+    width: 80%;
+    margin: 0 auto;
     background-color: aquamarine;
     border: 5px solid black;
     border-radius: 20px;
-    overflow: hidden; /* Keeps markers inside the box */
-}
-img{
-    max-width: 25%;
 }
 button{
     
@@ -32,6 +58,7 @@ button{
     font-size: 16px;            /* Text size */
     margin: 10px;
     transition: background-color .3s ease;
+    cursor: pointer;
 }
 button:hover {
     background-color: #19a2cf;
@@ -56,20 +83,5 @@ input:focus{
     border-color: #19a2cf;
 }
 
-.marker {
-    position: absolute;   /* Critical: lets them float over the container */
-    width: 20px;
-    height: 20px;
-    background-color: #ff4d4d; /* Red color */
-    border: 2px solid white;
-    border-radius: 50%;       /* Makes it a circle */
-    cursor: pointer;
-    transform: translate(-50%, -50%); /* Centers the dot exactly on the coordinate */
-    z-index: 10;              /* Ensures it sits on top of the image */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.marker:hover {
-    background-color: #b7410e; /* Changes color when you point at it */
-    transform: translate(-50%, -50%) scale(1.2); /* Slight grow effect */
-}
+#home{background-color: beige;}
+#mappage{background-color: beige;}

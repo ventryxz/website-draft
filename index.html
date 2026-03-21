@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>My Website</title>
+    <title>My Korean Map</title>
 </head>
 <body>
-    <p>Map</p>
-    <div class="topnav">
-        <input id="search" type="text" placeholder="Search..">
-        <button id="button">Go</button>
+    <button class="tablink" onclick="openPage('home', 'this', 'red')">Home</button>
+    <button class="tablink" onclick="openPage('mappage', 'this', 'beige')">Map</button>
+
+    <div id="home" class="tabcontent">
+        <h1 style="color:#4E2A2A;" id="typewriter">Welcome!</h1>
     </div>
-    <div id="container">
-        <img src="map.png" alt="Korean Map">
+
+    <div id="mappage" class="tabcontent">
+        <p id="heading">Map</p>
+        <div class="topnav">
+            <input id="search" type="text" placeholder="Search..">
+            <button id="button">Go</button>
+        </div>
+        <div id="map"></div>
     </div>
+
     <script src="logic.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPm5yPuwOOT9lKV4qeA58IZcNbIq4NOI&callback=initMap"></script>
 </body>
 </html>
