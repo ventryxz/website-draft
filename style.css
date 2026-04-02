@@ -59,6 +59,7 @@ body,html{
 
 .tabcontent{
     color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     display: none;
     padding: 0px 20px;
     height: 100%;
