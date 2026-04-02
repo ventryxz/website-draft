@@ -7,20 +7,37 @@
     <title>My Korean Map</title>
 </head>
 <body>
-    <button class="tablink" onclick="openPage('home', 'this', 'red')">Home</button>
-    <button class="tablink" onclick="openPage('mappage', 'this', 'beige')">Map</button>
+    <div class="tabs">
+        <button class="tablink" onclick="openPage('home', this, '#777')">WebsiteName</button>
+        <button class="tablink" onclick="openPage('mappage', this, '#777')">Map</button>
+        <button class="tablink" onclick="openPage('abme', this, '#777')">About Me</button>
+        <button class="tablink" onclick="openPage('contact', this, '#777')">Contact Me</button>
+    </div>
 
     <div id="home" class="tabcontent">
-        <h1 style="color:#4E2A2A;" id="typewriter">Welcome!</h1>
+        <h1 class="typewrite" style="font-size: 150px;" data-speed="100">Welcome!</h1>
+        <p class="typewrite" style="font-size: 50px;" data-speed="50">To start off, <br>click on one of the tabs above.</p>
+	<p class="slidein" style="text-align: center;">Or,</p>
+	<p class="slidein" style="text-align: center;">you can guess my favorite number...</p>
     </div>
 
     <div id="mappage" class="tabcontent">
-        <p id="heading">Map</p>
+        <h1 class="slidein" style="font-size: 100px; height: 50px;">Map</h1>
         <div class="topnav">
             <input id="search" type="text" placeholder="Search..">
             <button id="button">Go</button>
         </div>
         <div id="map"></div>
+    </div>
+
+    <div id="abme" class="tabcontent">
+        <p class="slidein">Welcome!</p>
+    </div>
+
+    <div id="contact" class="tabcontent">
+        <h1 class="slidein">Welcome!</h1>
+        <p class="slidein">To contact me,</p>
+        <p class="slidein">don't ask me.</p>
     </div>
 
     <script src="logic.js"></script>

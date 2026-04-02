@@ -1,25 +1,82 @@
-function openPage(pageName, elmnt, color){
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for(i = 0; i < tabcontent.length; i++)
-    {
-        tabcontent[i].style.display = "none";
+
+    function openPage(pageName, elmnt, color){
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for(i = 0; i < tabcontent.length; i++)
+        {
+            tabcontent[i].style.display = "none";
+
+        }
+
+        tablinks = document.getElementsByClassName("tablink");
+        for(i = 0; i < tablinks.length; i++)
+        {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        document.getElementById(pageName).style.display = "block";
+
+        const slideAnim = document.getElementById(pageName).querySelectorAll('.slidein');
+        slideAnim.forEach(el => {
+            el.style.animation = "none";
+            el.offsetHeight; // Trigger a "reflow" (this is a magic JS trick)
+            el.style.animation = null; // Re-enables the CSS animation
+        });
+
+        typewriteTexts = document.getElementById(pageName).getElementsByClassName("typewrite");
+        for(i = 0; i < typewriteTexts.length; i++)
+        {
+            typewriter(typewriteTexts[i]);
+        }
+
+        
+        elmnt.style.backgroundColor = "#323437";
+        function blink(){
+            elmnt.style.backgroundColor = color;
+        }
+        setTimeout(blink, 100);
+        elmnt.style.backgroundColor = "#323437";
+        
     }
 
-    tablinks = document.getElementsByClassName("tablink");
-    for(i = 0; i < tablinks.length; i++)
-    {
-        tablinks[i].style.backgroundColor = "";
+    function typewriter(elmnt){
+        if (elmnt.typingTimer) {
+            clearTimeout(elmnt.typingTimer);
+        }
+        if (!elmnt.getAttribute("data-text")) {
+            elmnt.setAttribute("data-text", elmnt.innerHTML);
+        }
+
+        // Now, ALWAYS pull the text from the "backup" label
+        const text = elmnt.getAttribute("data-text");
+
+        elmnt.innerHTML = "";
+        let speed = elmnt.getAttribute("data-speed");
+
+        if(isNaN(speed))
+        {
+            speed = 100;
+        }
+        
+        var i = 0;
+        function type(){
+            if(i < text.length){
+                if(text.substring(i, i+4) === "<br>")
+                {
+                    elmnt.innerHTML += "<br>";
+                    i += 4;
+                    type();
+                }else
+                {
+                    elmnt.innerHTML += text.charAt(i);
+                    i++;
+                }
+                elmnt.typingTimer = setTimeout(type, speed);
+            }
+        }
+        type();
     }
-
-    document.getElementById(pageName).style.display = "block";
-
-    elmnt.style.backgroundColor = color;
-
-}
-document.getElementById("home").click();
-
-
 //map
 const foodSpots = [
     { name: "Seoul BBQ", type: "Korean", lat: 37.5665, lng: 126.9780 },
