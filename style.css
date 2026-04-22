@@ -2,47 +2,25 @@ body,html{
     font-family: Arial, sans-serif;
     height: 100%;
     margin:0;
-    background-color: #333438;
+    background-color: #1A1A1B;
 }
 
-#home{background-color: #333438;}
-#mappage{background-color: #333438;}
-#abme{background-color: #333438;}
-#contact{background-color: #333438;}
+#home{background-color: #1A1A1B;}
+#mappage{background-color: #1A1A1B;}
+#abme{background-color: #1A1A1B;}
+#contact{background-color: #1A1A1B;}
 
-#abme {
-    padding: 40px;
-    max-width: 800px; /* Prevents long, tiring lines of text */
-    margin: 0 auto;   /* Centers the container */
-    line-height: 1.6; /* Adds space between lines */
-    color: white;
-}
-
-#abme h3 {
-    color: white;
-    margin-top: 25px;
-    border-bottom: 1px solid #eee;
-    display: inline-block;
-}
-
-#abme blockquote {
-    font-style: italic;
-    border-left: 4px solid #777;
-    padding-left: 20px;
-    margin: 30px 0;
-    color: white;
-}
 
 .tabs{
     display: flex;
-    background-color: #333438;
+    background-color: #1A1A1B;
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */
     height: 10vh; /* Full viewport height */
 }
 
 .tablink{
-    background-color: #323437;
+    background-color: #1A1A1B;
     color: white;
     float:left;
     border: none;
@@ -59,7 +37,6 @@ body,html{
 
 .tabcontent{
     color:white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     display: none;
     padding: 0px 20px;
     height: 100%;
@@ -71,6 +48,17 @@ h1{
     color: black
 }
 
+.bio-container{
+    font-size: 25px;
+}
+
+.bio-image{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 50vh; /* Full viewport height */
+}
+
 #map{
     height: 70vh; /* Full viewport height */
     width: 80%;
@@ -79,6 +67,122 @@ h1{
     border: 5px solid black;
     border-radius: 20px;
 }
+.pantry-container {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling like mobile apps */
+}
+
+/* Hide the ugly default checkbox */
+.chip input {
+    display: none;
+}
+
+/* The actual "Button" look */
+.chip-content {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: #444; /* Dark neutral */
+    border: 2px solid transparent;
+    border-radius: 50px; /* Makes it "longish" and pill-shaped */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Style the icon inside */
+.chip-content img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* HOVER EFFECT */
+.chip-content:hover {
+    background-color: #555;
+}
+
+/* CHECKED STATE (The "Active" Look) */
+.chip input:checked + .chip-content {
+    background-color: #fff; /* White background */
+    color: #000;            /* Black text */
+    border-color: #E63946;  /* Gochujang Red border */
+    transform: scale(1.05); /* Slight "pop" effect */
+}
+
+/* --- Modern Search Container --- */
+.search-overlay {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+}
+
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08); /* Modern transparent look */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.search-bar-wrapper:focus-within {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #E63946; /* Gochujang Red */
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+}
+
+.search-bar-wrapper input {
+    background: transparent;
+    border: none;
+    flex-grow: 1;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.search-bar-wrapper button {
+    background-color: #E63946;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* --- Fixed Chips / Filters --- */
+.pantry-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.chip input { display: none; }
+
+
+/* --- Map Refinement --- */
+#map {
+    height: 60vh;
+    width: 90%;
+    margin: 0 auto;
+    border: none; /* Remove the heavy black border */
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    background-color: #2C2C2E; /* Placeholder while loading */
+}
+
+
 button{
     
     background-color: beige;     
@@ -90,6 +194,18 @@ button{
 button:hover {
     background-color: #19a2cf;
 }
+#locate-me {
+    transition: transform 0.2s ease;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+#locate-me:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
 .topnav
 {
     display: flex;
@@ -97,6 +213,15 @@ button:hover {
     align-items: center; /* Vertical centering */
     height: 15vh; /* Full viewport height */
     
+}
+
+.link-text {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.link-text:hover {
+    color: #19a2cf; /* Changes color when they hover over it */
 }
 input{
     padding: 10px;              /* Space inside the input */
@@ -108,6 +233,10 @@ input{
 }
 input:focus{
     border-color: #19a2cf;
+}
+
+.italic-text {
+    font-style: italic;
 }
 
 .slidein {
@@ -130,4 +259,6 @@ input:focus{
 .tabcontent .slidein:nth-child(1) { animation-delay: 0.1s; }
 .tabcontent .slidein:nth-child(2) { animation-delay: 0.7s; }
 .tabcontent .slidein:nth-child(3) { animation-delay: 1.4s; }
+.tabcontent .slidein:nth-child(4) { animation-delay: 1.8s; }
+.tabcontent .slidein:nth-child(5) { animation-delay: 2.7s; }
 

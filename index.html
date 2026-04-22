@@ -8,61 +8,105 @@
 </head>
 <body>
     <div class="tabs">
-        <button class="tablink" onclick="openPage('home', this, '#777')">WebsiteName</button>
-        <button class="tablink" onclick="openPage('mappage', this, '#777')">Map</button>
+        <button class="tablink" onclick="openPage('home', this, '#777')">Home</button>
         <button class="tablink" onclick="openPage('abme', this, '#777')">About Me</button>
+        <button class="tablink" onclick="openPage('mappage', this, '#777')">Map</button>
         <button class="tablink" onclick="openPage('contact', this, '#777')">Contact Me</button>
     </div>
 
     <div id="home" class="tabcontent">
-        <h1 class="typewrite" style="font-size: 150px;" data-speed="100">Welcome!</h1>
-        <p class="typewrite" style="font-size: 50px;" data-speed="50">To start off, <br>click on one of the tabs above.</p>
-	<p class="slidein" style="text-align: center;">Or,</p>
-	<p class="slidein" style="text-align: center;">you can guess my favorite number...</p>
+        <h1 class="typewrite" style="font-size: 55px; color:white" data-speed="50">Evolving through Code,<br>Rooted in Tradition.</h1>
+        <p class="typewrite italic-text" style="font-size: 50px; text-align: center" data-speed="100">Byte-Sized Culture</p>
+        <p class="slidein" style="text-align:center">Featuring a Prototype Interactive Map where users can find food markets near them to better find cultural ingredients</p>
+        <p class="slidein" style="text-align:center"><br></p>
+        <p class="slidein" style="text-align:center">
+        <span class="link-text" onclick="openPage('mappage', document.querySelector('.tablink:nth-child(3)'), '#777')">
+            Try Now ->
+        </span>
+</p>
     </div>
 
-    <div id="mappage" class="tabcontent">
-        <h1 class="slidein" style="font-size: 100px; height: 50px;">Map</h1>
-        <div class="topnav">
-            <input id="search" type="text" placeholder="Search..">
-            <button id="button">Go</button>
-        </div>
-        <div id="map"></div>
-    </div>
 	
 	<div id="abme" class="tabcontent">
 	    <div class="bio-container">
+            <div class="bio-image">
+                <img src="headshot.png" alt = "Luke Hahn">
+            </div>
 	        <h1 class="slidein">My Journey</h1>
 	        
 	        <section>
-	            <h3>The Roots</h3>
-	            <p>I know computer science is a common major, but for me, it’s more than a desk job. Growing up with a father who was a software developer in South Korea, I naturally gravitated toward computers. My passion started exactly where many great journeys do: with games.</p>
+	            <h3>Original Interest</h3>
+	            <p>I first grew an interest in the computer science field as I watched my dad, who was a former developer at Samsung, work with computers and software.</p>
 	        </section>
 	
 	        <section>
-	            <h3>Trial & Error</h3>
-	            <p>At ten, I started with <strong>Scratch</strong>. I spent hours on tutorials, trying to build something memorable. When I outgrew block coding, I jumped into <strong>Unity</strong>. It was a steep learning curve—honestly, a bit too steep at the time—but it taught me that I needed a real foundation in logic before I could build the worlds I imagined.</p>
+	            <h3>Scratch And Unity</h3>
+	            <p>In my elementary school years, I started with MIT's kid-friendly coding website, <strong>Scratch</strong>. I spent hours on tutorials, trying to build something memorable. When I got used to Scratch's block coding system, I wanted to progress into what I considered "real" coding. Since I was still hooked on game development, I heard of and started working on a project in <strong>Unity</strong>'s game engine. It was a steep learning curve, but it taught me that I needed a real foundation in coding, and above all, a drive to keep going.</p>
 	        </section>
 	
 	        <section>
-	            <h3>The Mission</h3>
-	            <p>That realization led me to Java. From Udemy to AP Computer Science A, I’ve moved from "playing" with code to "building" with it. My ultimate goal? To build an app that shares my culture with the world through the universal language of food.</p>
+	            <h3>Recent Years</h3>
+	            <p>So recently, I've been familiarizing myself with the coding language <strong>Java</strong>. As a current high school student with AP Computer Science experience, I've set my sights on building an app that can revolutionize the ease of access of various food cultures, starting with my own.</p>
 	        </section>
 	
-	        <blockquote>
-	            "I may not be a master developer yet, but I have a stubborn dream to create something that benefits people's daily lives."
+	        <blockquote style="text-align:center">
+                <br>
+	            “The most dangerous phrase in the language is, ‘We’ve always done it this way.'” <br>– Grace Hopper, <br>computer pioneer and naval officer
+
 	        </blockquote>
 	    </div>
 	</div>
 
+<div id="mappage" class="tabcontent">
+    <h1 class="slidein" style="font-size: 60px; margin-bottom: 10px; color: white;">Find Markets</h1>
+
+    <div class="search-overlay">
+            <div class="search-container">
+                <div class="search-bar-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search" placeholder="Search markets or ingredients..." autocomplete="off">
+                    <button id="locate-me" title="Use my location" style="background:none; border:none; padding:5px; cursor:pointer; font-size:20px;">📍</button>
+                    <button id="button">Search</button>
+                </div>
+                
+                <div class="pantry-container">
+                    <label class="chip">
+                        <input type="checkbox" class="ingredient" value="Gochugaru">
+                        <div class="chip-content">
+                            <img src="gochugaru.png" alt="Chili">
+                            <span>Gochugaru</span>
+                        </div>
+                    </label>
+                    <label class="chip">
+                        <input type="checkbox" class="ingredient" value="Doenjang">
+                        <div class="chip-content">
+                            <img src="doenjang.png" alt="Soybean">
+                            <span>Doenjang</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="map" style="height: 500px; width: 100%; border-radius: 15px; margin-top: 20px;"></div>
+    </div>
+
     <div id="contact" class="tabcontent">
-        <h1 class="slidein">Welcome!</h1>
-        <p class="slidein">To contact me,</p>
-        <p class="slidein">don't ask me.</p>
+        <h1 class="slidein">Contact Me: </h1>
+        <p class="slidein" style="text-align:center">Education Email: luke.hahnedu@gmail.com</p>
+        <p class="slidein" style="text-align:center">Business Inquiries: gildedmountain@gmail.com</p>
     </div>
 
     <script src="logic.js"></script>
+    <script>
+    (g=>{var h="",stack=[],ads=[],key="AIzaSyAIPm5yP...",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(c+" failed to load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(l+" only be called once."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: "AIzaSyAIPm5yPuwOOT9lKV4qeA58IZcNbIq4NOI",
+        v: "weekly",
+    });
+    </script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPm5yPuwOOT9lKV4qeA58IZcNbIq4NOI&libraries=places&callback=initMap"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPm5yPuwOOT9lKV4qeA58IZcNbIq4NOI&callback=initMap"></script>
 </body>
 </html>
+
